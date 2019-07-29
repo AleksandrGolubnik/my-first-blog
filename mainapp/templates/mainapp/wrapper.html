@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Персональный сайт учителя</title>
+  {% load staticfiles %}
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css">
+  <link rel="icon" href="/static/mainapp/image/icon.png">
+</head>
+<body style="background: silver">
+  <div class="jumbotron">
+    <div class="container">
+      <div class="col-xs-4 col-xs-offset-4 text-right">
+        <nav>
+         <ul>
+           {% if user.is_authenticated %}
+          <li>
+            <form class="logout-link" action="{% url 'accounts:logout' %}" method="post">
+              {% csrf_token %}
+              <button type="submit" class="btn btn-danger btn-lg">Выход</button>
+            </form>
+          </li>
+          {% else %}
+          <li><a href="/accounts/login" class="btn btn-warning btn-lg">Вход</a></li>
+          <li><a href="/accounts/signup" class="btn btn-danger btn-lg">Регистрация</a></li>
+          {% endif %}
+        </ul>
+      </nav>
+    </div>
+      <img src="{% static 'mainapp/image/me.jpg' %}" class="img-thumbnail">
+      <h1>{% include "mainapp/includes/some_html.html" %}</h1>
+      {% block information %}
+      {% endblock %}
+        <p>
+        <a href="/" class="btn btn-success btn-lg">Главная страница</a>
+        <a href="/news" class="btn btn-info btn-lg">Новости</a>
+        <a href="/activity" class="btn btn-primary btn-lg">Методическая копилка</a>
+        <a href="/achieve" class="btn btn-success btn-lg">Мои достижения</a>
+        <a href="/parents" class="btn btn-danger btn-lg">Родителям</a>
+        <a href="/contact/contacts" class="btn btn-info btn-lg">Связь со мной</a>
+      </p>
+
+      {% block home %}
+      {% endblock %}
+      {% block content %}
+      {% endblock %}
+      {% block diplomas %}
+      {% endblock %}
+    </div>
+  </div>
+<div class="container">
+  <hr>
+  &copy: Все права защищены 2019
+
+
+</body>
+</html>

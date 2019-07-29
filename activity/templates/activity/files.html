@@ -1,0 +1,24 @@
+{% extends "mainapp/wrapper.html" %}
+
+{% block content %}
+<div class="col-xs-4 col-xs-offset-4 text-center">
+<h1 class="font-italic text-secondary">Если педагог соединяет в себе любовь к делу и к ученикам, он - совершенный педагог. (с) Лев Толстой </h1>
+  </div>
+<h1>Интернет ресурсы</h1>
+<li><a href="https://foxford.ru">Онлайн-школа Фоксфорд</a></li>
+<li><a href="https://oge.sdamgia.ru">Сайт Решу ОГЭ</a></li>
+<li><a href="https://ege.sdamgia.ru">Сайт Решу ЕГЭ</a></li>
+<li><a href="http://gplinform.ucoz.ru">Сайт по информатике</a></li>
+<li><a href="http://kpolyakov.spb.ru">Сайт Полякова информатика</a></li>
+<li><a href="https://kahoot.com">Сайт для создания интерактивных тестов Kahoot</a></li>
+<li><a href="http://www.etudes.ru/ru/">Математические этюды</a></li>
+<li><a href="http://www.umapalata.com">Дидактические игры</a></li>
+<li><a href="https://globallab.org/ru/">Проектная деятельность</a></li>
+<li><a href="https://www.google.ru/intl/ru/forms/about/">Создание анкет, опросов, тестов</a></li>
+<li><a href="https://code.org/minecraft">Программирование в Майнкрафте</a></li>
+<h1>Мои методические наработки, статьи и проекты</h1>
+{% for post in object_list %}
+<li><a href="/activity/{{post.id}}"<h3>{{post.title}}</h3></a></li>
+
+{% endfor %}
+{% endblock %}

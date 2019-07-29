@@ -1,0 +1,11 @@
+{% extends "mainapp/wrapper.html" %}
+
+{% block content %}
+   {% for posts in object_list %}
+
+      <a href="/parents/{{posts.id}}"<h3>{{posts.title}}</h3></a>
+      <h5>{{posts.date|date:"d-m-Y"}}</h5>
+      <img src="{{MEDIA_URL}}{{posts.image.url}}" class="img-thumbnail" style="width: 300px; hight: 300px; "/></br>
+
+    {% endfor %}
+{% endblock %}

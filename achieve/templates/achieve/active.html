@@ -1,0 +1,7 @@
+{% extends "mainapp/wrapper.html" %}
+
+{% block diplomas %}
+      <h2 class="text-info">{{diploma.title}}</h2>
+   <h6 class="text-info">Дата: {{diploma.date|date:"Y-m-d"}}</h6>
+   <img src="{{diploma.image.url}}" class="img-thumbnail" style= "width: 400px; hight: 800px; "/>
+{% endblock %}

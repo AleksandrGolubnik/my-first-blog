@@ -1,0 +1,7 @@
+{% extends "mainapp/wrapper.html" %}
+
+{% block content %}
+      <h2 class="text-info">{{upload.title}}</h2>
+      <p>{{upload.discription|safe|linebreaks}}</p>
+      <a href="{{ upload.pic.url }}">Скачать</a>
+{% endblock %}

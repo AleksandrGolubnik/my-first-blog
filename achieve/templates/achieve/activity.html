@@ -1,0 +1,15 @@
+{% extends "mainapp/wrapper.html" %}
+{% block content %}
+  <div class="col-xs-4 col-xs-offset-4 text-center">
+<h1 class="font-italic text-secondary">Считай несчастным тот день или час, в который ты не усвоил
+  ничего нового и ничего не прибавил к своему образованию.(с) Ян Амос Коменский </h1>
+    </div>
+
+{% endblock %}
+{% block diplomas %}
+   {% for active in object_list %}
+      <a href="/achieve/{{active.id}}"<h3>{{active.title}}</h3></a>
+      <h5>{{active.date|date:"d-m-Y"}}</h5>
+      <img src="{{MEDIA_URL}}{{active.image.url}}" class="img-thumbnail" style="width: 100px; hight: 300px; "/></br>
+   {% endfor %}
+{% endblock %}

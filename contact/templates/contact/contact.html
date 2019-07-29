@@ -1,0 +1,25 @@
+{% extends "mainapp/wrapper.html" %}
+{% block content %}
+{% csrf_token %}
+
+<h1>Мои соц сети</h1>
+<li><a href="https://www.instagram.com/aleksandrgolubnik/">Мой блог в Instagram</a></li>
+<li><a href="https://vk.com/id62369427">Я ВКонтакте</a></li>
+<li><a href="https://www.youtube.com/channel/UCqXRdQDTh1aeInEx_svRj8A?view_as=subscriber">Мой канал на Youtube</a></li>
+
+<h1>Полезные сайты</h1>
+<li><a href="http://minedu.karelia.pro">Министерство образования Республики Карелия</a></li>
+<li><a href="http://cro.karelia.ru/">Центр развития образования г.Петрозаводск</a></li>
+<li><a href="http://kiro-karelia.ru">Карельский институт развития образования</a></li>
+<li><a href="https://petrsu.ru">Петрозаводский государственный университет</a></li>
+<li><a href="http://education.petrozavodsk-mo.ru">Управление образования администрации Петрозаводского городского округа</a></li>
+<li><a href="http://zakon-ob-obrazovanii.ru">Федеральный закон "Об образовании в РФ" №273</a></li>
+<li><a href="https://www.coe.int/ru/web/compass/convention-on-the-rights-of-the-child">Конвенция о правах ребенка</a></li>
+
+<h1>Форма обратной связи</h1>
+<form role="form" action="" method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Отправить</button>
+</form>
+{% endblock %}

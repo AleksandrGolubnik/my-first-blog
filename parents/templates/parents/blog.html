@@ -1,0 +1,8 @@
+{% extends "mainapp/wrapper.html" %}
+
+{% block content %}
+   <h2 class="text-info">{{advice.title}}</h2>
+   <h6 class="text-info">Опубликовано: {{advice.date|date:"Y-m-d в H:i:s"}}</h6>
+   <p>{{advice.post|safe|linebreaks}}</p>
+  <img src="{{advice.image.url}}" class="img-thumbnail" style= "width: 800px; hight: 600px; "/>
+{% endblock %}
